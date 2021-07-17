@@ -1,0 +1,89 @@
+<%- include('layout/header') %>
+
+<div class="container-fluid mt-5">
+  <div class="row">
+    <div class="col-md-10 col-12 mx-auto shadow-lg p-3 mb-5 rounded">
+      <h1 class="text-center display-6" style="font-size: 30px;"><b>Create your campaign</b></h1>
+        <div class="row">
+                
+          <div class="container-fluid">
+            <div class="row g-5">
+              <div class="col-lg-12">
+                <h4 class="mb-3 display-6">Enter Details Below</h4>
+                <form action="/create-campaign" method="POST" id="add-form" enctype="multipart/form-data">
+                  <div class="row g-3">
+                    <div class="col-sm-6">
+                      <label for="name" class="form-label">Your name</label>
+                      <input type="text" class="form-control" name="name" placeholder="Enter name" required>
+                    </div>
+
+                    <div class="col-sm-6">
+                      <label for="phone" class="form-label">Phone number</label>
+                      <input type="tel" class="form-control" name="phone" placeholder="Enter phone number" required>
+                    </div><br />
+
+                    <div class="col-sm-6">
+                      <br /><label for="location" class="form-label">Where do you live?</label>
+                      <input type="text" class="form-control" name="location" placeholder="Where do you stay?" required>
+                    </div><br />
+
+                    <div class="col-sm-6">
+                      <br /><label for="category" class="form-label">What are you fundraising for?</label>
+                      <input type="text" class="form-control" name="category" placeholder="Medical, Education, Emergency, Church" required>
+                    </div><br />
+
+                    <div class="col-sm-6">
+                      <br /><label for="title" class="form-label">What is your fundraiser title?</label>
+                      <input type="text" class="form-control" name="title" placeholder="Give your fundraiser a title" required>
+                    </div>
+            
+                    <div class="col-sm-6">
+                      <br /><label for="amount" class="form-label">How much would you like to raise?</label>
+                      <input type="text" class="form-control" name="amount" placeholder="How much money do you need?" required>
+                    </div>
+                  </div>
+
+                  <hr class="my-4">
+
+                  <h4 class="mb-3 display-6">Fundraiser Cover Photo</h4>
+
+                  <div class="col-12">
+                    <p>A high quality photo will help tell your story and build trust with donors</p>
+
+                    <div class="input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm">
+                      <input id="upload" name="image" type="file" onchange="readURL(this);" class="form-control border-0">
+                        <label id="upload-label" for="image" class="font-weight-light text-muted">Choose file</label>
+
+                          <div class="input-group-append">
+                            <label for="upload" class="btn btn-light m-0 rounded-pill px-4"> <i class="fas fa-cloud-upload-alt mr-2 text-muted"></i><small class="text-uppercase font-weight-bold text-muted">Choose file</small></label>
+                          </div>
+                    </div>
+            
+                    <p class="font-italic text-white text-center">The image uploaded will be rendered inside the box below.</p>
+
+                    <div class="image-area mt-4"><img id="imageResult" src="#" alt="" class="img-fluid rounded shadow-sm mx-auto d-block"></div>
+                  </div>
+
+                  <hr class="my-4">
+
+                  <h4 class="mb-3 display-6">Tell us your story</h4>
+          
+                  <div class="col-12">
+                    <label for="story" class="form-label">Why are you fundraising?</label>
+                    <textarea class="form-control" name="story" rows="4" placeholder="Why do you need our help, tell us your story"></textarea>
+                  </div>
+
+                  <hr class="my-4">
+
+                  <button class="w-100 btn btn-primary btn-lg" style="font-size: 26px;" name="submit" type="submit">Submit details</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('layout/footer') %>

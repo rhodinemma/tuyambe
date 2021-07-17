@@ -1,0 +1,94 @@
+<%- include('layout/header') %>
+
+    <div class="container-fluid shadow-lg p-4 mb-5 rounded">
+      <div class="row">
+        <div class="jumbotron jumbotron-fluid mb-0 rounded">
+            <div class="container">
+              <div class="row justify-content-center text-center">
+                <div class="col-md-12 col-lg-10 box" style="font-size: 18px; letter-spacing: 2px;">
+                  <h1 class="display-5 p-3">The Coolest Fundraising Space</h1>
+
+                  <p class="lead">Tuyambe is a new platform that arose to meet the demands of contactless payments, ensuring cashless donations. Help charities raise vital funds, accurately reflect their cause and encourage people to give.</p>
+
+                  <p class="lead">
+                    Tuyambe is basically a fundraising platform for charities, community groups among others.
+                  </p>
+
+                  <p class="lead">
+                    <a class="btn btn-success btn-lg" href="/category-box" role="button">Get Started Now <i class="fa fa-arrow-circle-right"></i></a>
+                  </p>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+        
+          
+<div class="container-fluid shadow-lg p-3 mb-5 rounded">
+  <div class="row">
+    <%- include('layout/carousel') %>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="container-fluid mt-2">
+            <div class="row">
+              <div class="col-md-10 col-12 mx-auto">
+                <h1 class="text-center display-6" style="font-size: 28px;"><b>A Word from Us</b></h1>
+                  <div class="row">
+                    <h2 class="text-center" style="font-size: 19px; letter-spacing: 2px;">We claim no sign-up fees or ongoing fees and we are unique from some other fundraising platforms by removing the 'middle man' aspect. Instead, funds donated through Tuyambe are sent directly to the charity itself.</h2><br />
+                    <h2 class="text-center" style="font-size: 19px; letter-spacing: 2px;">We are a fundraising platform that exclusively focuses on smaller charities, with a focus on social giving.</h2>
+                  </div><br />
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <center>
+                        <a class="btn btn-secondary btn-lg btn-block" href="/why-donate-with-us" style="text-decoration: none; color:white; font-size: 24px;"><i class="fa fa-thumbs-up" aria-hidden="true"></i> Why Donate With Us?</a>
+                      </center>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div><br />
+
+  <div class="container-fluid shadow-lg p-3 mb-5 rounded">
+    <div class="row">
+      <div class="col-md-10 col-12 mx-auto">
+        <h1 style="font-size: 26px;" class="display-6 text-center"><b>Our Featured Campaigns</b></h1>
+          
+          <section class="section my-4">
+            <div class="container text-center">
+              <section>
+                <div class="row">
+                  <% if(camps != '') { %>
+                    <% camps.forEach((row) => {%>
+                      <div class="col-lg-4 mb-3">
+                        <div class="card h-100 shadow card-img-top" style="width: 18rem;">
+                            <div class="card-body">
+                              <img src="<%= row.image %>" class="img-fluid rounded" width="286px" height="180px"><br /><br />
+                              <h5><b>Title: </b></h5> <%= row.title %><br />
+                              <h5><b>Location:</b></h5> <%= row.location %><br />
+                              <h5><b>Category:</b></h5> <%= row.category %><br />
+                              <h5><b>Amount needed:</b></h5> <%= row.amount %>
+                            </div>
+                            <div class="card-footer">
+                              <button type="button" class="btn btn-warning btn-lg btn-block"><i class="far fa-eye"></i> See progress</a></button>
+                            </div>
+                        </div>
+                      </div>
+                    <% }) %>
+                  <% } else { %>
+                      <h2 class="display-6">No campaigns found in our database!</h2>
+                    <% } %>
+                </div>
+              </section>
+            </div>
+          </section>
+
+      </div>
+    </div>
+  </div>
+
+<%- include('layout/footer') %>

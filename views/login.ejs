@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" type="image/jpg" href="favicon.ico"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <title>Tuyambe | Login</title>
+    <style>
+       @import url('https://fonts.googleapis.com/css2?family=Manjari&display=swap');
+        *{
+          font-family: 'Manjari', sans-serif;
+        } 
+        .text-area{
+            height: 100vh;
+            color: white;
+            background: rgba(0,0,0,0.7);
+        }
+        .header{
+            background-image: url("img/1.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            height: 100vh;  
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--header starts-->
+    <div class="header">
+        <div class="d-flex justify-content-center align-items-center flex-column text-area" style="letter-spacing: 3px;">
+            <h1 class="display-6">Login Here</h1>    
+            <form action="/login" method="POST">
+              <% if(success_message != '' ){ %>
+                <div class="alert alert-dismissible alert-success">
+                  <button type="button" class="close" data-dismiss="alert">&times;</button>
+                  <strong><%= success_message %></strong>
+                </div>
+              <% } %>
+              <% if(error != '') {%>
+                    <div class="alert alert-dismissible alert-danger">
+                      <button type="button" class="close" data-dismiss="alert">&times;</button>
+                      <strong><%= error %></strong>
+                    </div>
+                <% } %>
+                <div class="mb-3">
+                    <label for="username">Enter Your Email</label>
+                    <input type="email" class="form-control form-control-lg" name="email" id="username" autocomplete="off"
+                        placeholder="Email">
+                </div>
+                <div class="mb-3">
+                    <label for="password">Enter Your Password</label>
+                    <input type="password" class="form-control form-control-lg" name="password" id="password" autocomplete="off"
+                        placeholder="Password">
+                </div>
+                <div class="d-grid gap-3 mb-3">
+                    <input type="submit" class="btn btn-lg btn-block btn-outline-primary text-white" value="Login">
+                </div>
+                <p>New Here? <a class="card-link text-white" href="/become-a-member">Become a member</a> </p>
+                <p style="text-align: center;">Copyright &copy; 2021 Tuyambe</p>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

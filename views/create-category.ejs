@@ -1,0 +1,51 @@
+<%- include('layout/header') %>
+
+<div class="container-fluid mt-5">
+  <div class="row">
+    <div class="col-md-10 col-12 mx-auto shadow-lg p-3 mb-5 rounded">
+      <h1 class="text-center brand" style="font-size: 30px;"><b>Create your category</b></h1>
+        <div class="row">
+                
+          <div class="container-fluid">
+            <div class="row g-5">
+              <div class="col-lg-12">
+                <h4 class="mb-3 brand">Enter Details Below</h4>
+                <form action="/create-category" method="POST" id="add-form" enctype="multipart/form-data">
+                  <div class="row g-3">
+                    <div class="col-lg-6">
+                      <br /><label for="category" class="form-label">Fill your category below</label>
+                      <input type="text" class="form-control" name="category" placeholder="Medical, Education, Emergency, Church" required>
+                    </div><br />
+                  </div>
+
+                  <hr class="my-4">
+
+                  <h4 class="mb-3 brand">Category Photo</h4>
+
+                  <div class="col-12">
+                    <div class="input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm">
+                      <input id="upload" name="image" type="file" onchange="readURL(this);" class="form-control border-0">
+                        <label id="upload-label" for="image" class="font-weight-light text-muted">Choose file</label>
+
+                          <div class="input-group-append">
+                            <label for="upload" class="btn btn-light m-0 rounded-pill px-4"> <i class="fas fa-cloud-upload-alt mr-2 text-muted"></i><small class="text-uppercase font-weight-bold text-muted">Choose file</small></label>
+                          </div>
+                    </div>
+            
+                    <p class="font-italic text-white text-center">The image uploaded will be rendered inside the box below.</p>
+
+                    <div class="image-area mt-4"><img id="imageResult" src="#" alt="" class="img-fluid rounded shadow-sm mx-auto d-block"></div>
+                  </div>
+
+                  <hr class="my-4">
+
+                  <button class="w-100 btn btn-primary btn-lg brand" style="font-size: 26px;" name="submit" type="submit">Submit category</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+<div class="container-fluid my-5">
+    <h1 class="text-center brand" style="font-size: 30px;"><i class="fa fa-bullhorn fa-xl" aria-hidden="true"></i> <b>Featured Campaigns</b></h1>
+          <div class="row d-flex justify-content-center">
+              <div class="col-12">
+                <div id="carousel" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel" data-slide-to="0" class="active bg-secondary"></li>
+                        <li data-target="#carousel" data-slide-to="1" class="bg-secondary"></li>
+                        <li data-target="#carousel" data-slide-to="2" class="bg-secondary"></li>
+                      </ol>
+                          <div class="carousel-inner shadow-lg p-3 mb-5 rounded">
+                            <div class="carousel-item active">
+                              <div class="row">
+                                  <section class="section my-4">
+            <div class="container text-center">
+              <section>
+                <div class="row">
+                  <% if(camps != '') { %>
+                    <% camps.forEach((row) => {%>
+                      <div class="col-lg-4 mb-3">
+                        <div class="card h-100 shadow" style="width: 18rem;">
+                          <img src="<%= row.image %>" class="img-fluid rounded" width="100px" height="100px">
+                            <div class="card-body">
+                              <h5 class="brand">Description:</h5> <%= row.story %><br />
+                              <h5 class="brand">Location:</h5> <%= row.location %><br />
+                              <h5 class="brand">Category:</h5> <%= row.category %><br />
+                              <h5 class="brand">Amount needed:</h5> <%= row.amount %>
+                            </div>
+                            <div class="card-footer">
+                              <button type="button" class="btn btn-warning btn-lg btn-block"><i class="far fa-eye"></i> See progress</a></button>
+                            </div>
+                        </div>
+                      </div>
+                    <% }) %>
+                  <% } else { %>
+                      <h2 class="display-6">No campaigns found in our database!</h2>
+                    <% } %>
+                </div>
+              </section>
+            </div>
+          </section>
+                              </div>
+                            </div>
+                          </div>
+                  </div>
+              </div>
+          </div>
+</div>

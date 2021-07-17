@@ -1,0 +1,39 @@
+<%- include('layout/header') %>
+
+  <div class="container-fluid mt-5 shadow-lg p-3 mb-5 rounded">
+    <div class="row">
+      <div class="col-md-10 col-12 mx-auto">
+        <h1 class="text-center display-6" style="font-size: 28px;"><b>What's Happening and How to Help</b></h1>
+          <div class="row">
+            <h2 class="text-center" style="font-size: 18px; letter-spacing: 2px;">Presently, Uganda's population is striving in this deadly pandemic - their lives and futures on the line. But through a robust and dedicated support of donors like you, Tuyambe is on the line doing its best to secure Uganda's vulnerable population.</h2>
+            <br />
+            <h2 class="text-center" style="font-size: 18px; letter-spacing: 2px;">When crisis strikes, we are always among the first to respond and the last to leave. We aim to do whatever it takes to save the vulnerable as well as transforming their lives.</h2>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <br /><h1 class="text-center display-6" style="font-size: 30px;"></i> <b>Fundraising Categories</b></h1>
+
+  <section class="section my-4">
+    <div class="container text-center">
+      <section>
+        <div class="row">
+          <% if(cats != '') { %>
+            <% cats.forEach((row) => {%>
+              <div class="col-lg-4 mb-3">
+                <div class="card shadow zoo" style="width: 18rem;">
+                  <img src="<%= row.image %>" class="card-img-top" class="img-fluid">
+                    <div class="card-body">
+                      <h5 class="card title display-6" style="font-size: 20px; text-decoration: none; outline: none;">
+                        <a href="/category-box/<%= row.category %>" style="text-decoration: none; color: black"><%= row.category %></a>
+                      </h5>
+                    </div>
+                </div>
+              </div>
+            <% }) %>
+          <% } %>
+        </div>
+      </section>
+    </div>
+  </section>
