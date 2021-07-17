@@ -50,58 +50,60 @@
   <%- include('layout/navbar') %>
 
 
-<div class="container">
-				<h1 class="mt-4 mb-3 dope"><%= camp.title %></h1>
-					<ol class="breadcrumb">
-						<li class="breadcrumb-item">
-							<a href="/category-box">Categories</a>
-						</li>
-						<li class="breadcrumb-item active"><%= camp.category %></li>
-						<li class="breadcrumb-item active"><%= camp.title %></li>
-					</ol>
+  <div class="container">
+		<h1 class="mt-4 mb-3 dope"><%= camp.title %></h1>
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item">
+					<a href="/category-box">Categories</a>
+				</li>
+				<li class="breadcrumb-item active"><%= camp.category %></li>
+				<li class="breadcrumb-item active"><%= camp.title %></li>
+			</ol>
 
-				<div class="row">
-					<div class="col-lg-6">
-						<img class="img-fluid rounded mb-4" src="../<%= camp.image %>" width="750" height="450">
-						<p>Location: <b><%= camp.location %></b></p>
-						<p>Created By: <b><%= camp.name %></b></p>
-						<p>Date created: <b><%= camp.created %></b></p>
-					</div>
-					<div class="col-lg-6">
-						<h5 style="letter-spacing: 2px;">Description</h5>
+			<div class="row">
+				<div class="col-lg-6">
+					<img class="img-fluid rounded mb-4" src="../<%= camp.image %>" width="750" height="450">
+					<p>Location: <b><%= camp.location %></b></p>
+					<p>Created By: <b><%= camp.name %></b></p>
+					<p>Date created: <b><%= camp.created %></b></p>
+				</div>
+
+				<div class="col-lg-6">
+					<h5 style="letter-spacing: 2px;">Description</h5>
 						<p style="font-size: 18px;">
 							<b><%= camp.story %></b>
 						</p>
 
-						<h5 style="letter-spacing: 2px;">Amount needed</h5>
-						<p style="font-size: 22px;">
-							<i class="fa fa-heartbeat" aria-hidden="true"></i> 
-							<b><%= camp.amount %></b>
-						</p>
+					<h5 style="letter-spacing: 2px;">Amount needed</h5>
+					  <p style="font-size: 22px;">
+						  <i class="fa fa-heartbeat" aria-hidden="true"></i> 
+						  <b><%= camp.amount %></b>
+					  </p>
 
-						<h5 style="letter-spacing: 2px;">Amount collected so far</h5>
+					<h5 style="letter-spacing: 2px;">Amount collected so far</h5>
 						<p style="font-size: 22px;">
 							<i class="fa fa-hourglass-half" aria-hidden="true"></i>&nbsp;&nbsp;<b>900,000</b>
 
-                        	<div class="progress" style="height: 30px;">
-                          		<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">75%</div>
-                        	</div>
+              <div class="progress" style="height: 50px;">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%; font-size: 20px;">75%</div>
+              </div>
 						</p>
 
-						<h5 style="letter-spacing: 2px;">Number of donors</h5>
+					<h5 style="letter-spacing: 2px;">Number of donors</h5>
 						<p style="font-size: 22px;">
 							<i class="fa fa-child fa-lg" aria-hidden="true"></i> &nbsp;&nbsp;<b>200</b>
 						</p>
 
-						<h5 style="letter-spacing: 2px;">Campaign Status: </h5>
-                        <ul class="fa-ul">
-                          <li><i class="fa-li fa fa-spinner fa-spin"></i><b>Active</b></li>
-                        </ul>
+					<h5 style="letter-spacing: 2px;">Campaign Status: </h5>
+            <ul class="fa-ul">
+              <li><i class="fa-li fa fa-spinner fa-spin"></i><b>Active</b></li>
+            </ul>
 
-                        <a class="btn btn-success btn-lg btn-block" href="#" role="button" style="font-size: 20px; letter-spacing: 2px;"><i class="fas fa-hand-holding-usd"></i> Donate Now</a>
+            <a class="btn btn-success btn-lg btn-block" href="#" role="button" style="font-size: 20px; letter-spacing: 2px;"><i class="fas fa-hand-holding-usd"></i> Donate Now</a>
 
-					</div>
+            <a class="btn btn-warning btn-lg btn-block" role="button" style="font-size: 20px; letter-spacing: 2px;" onclick="copyToClipboard()"><i class="fas fa-share-alt"></i> Copy and share link</a>
 				</div>
+			</div>
 	</div>
 
 <%- include('layout/footer') %>

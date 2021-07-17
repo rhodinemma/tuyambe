@@ -171,11 +171,6 @@ router.get('/home-page', checkAuthenticated, (req, res)=>{
 	});
 });
 
-//route responsible for starting a campaign
-router.get('/create-campaign', checkAuthenticated, (req, res)=>{
-	res.render('create-campaign', {title: 'Create'});
-});
-
 router.get('/logout', (req, res)=>{
 	req.logout();
 	res.render('login');
@@ -199,9 +194,13 @@ router.get('/why-donate-with-us', checkAuthenticated, (req, res)=>{
 });
 
 router.get('/how-it-works', checkAuthenticated, (req, res)=>{
-	res.render('how-it-works', {title: 'How Yamba Works'});
+	res.render('how-it-works', {title: 'Steps'});
 });
 
+//route responsible for starting a campaign
+router.get('/create-campaign', checkAuthenticated, (req, res)=>{
+	res.render('create-campaign', {title: 'Create'});
+});
 
 //image upload
 var storage = multer.diskStorage({
@@ -284,7 +283,7 @@ router.get('/contact-us', checkAuthenticated, (req, res)=>{
 });
 
 //routes to fetch specified categories
-router.get('/category-box/medical', (req, res)=>{
+router.get('/category-box/medical', checkAuthenticated, (req, res)=>{
 	Camp.find({ "category": "Medical" }).exec((err, camps)=>{
 		if(err){
 			res.json({message: err.message});
@@ -297,7 +296,7 @@ router.get('/category-box/medical', (req, res)=>{
 	});
 });
 
-router.get('/category-box/education', (req, res)=>{
+router.get('/category-box/education', checkAuthenticated, (req, res)=>{
 	Camp.find({ "category": "Education" }).exec((err, camps)=>{
 		if(err){
 			res.json({message: err.message});
@@ -310,7 +309,7 @@ router.get('/category-box/education', (req, res)=>{
 	});;
 });
 
-router.get('/category-box/finance', (req, res)=>{
+router.get('/category-box/finance', checkAuthenticated, (req, res)=>{
 	Camp.find({ "category": "Financial Emergency" }).exec((err, camps)=>{
 		if(err){
 			res.json({message: err.message});
@@ -323,7 +322,7 @@ router.get('/category-box/finance', (req, res)=>{
 	});
 });
 
-router.get('/category-box/emergency', (req, res)=>{
+router.get('/category-box/emergency', checkAuthenticated, (req, res)=>{
 	Camp.find({ "category": "Emergency" }).exec((err, camps)=>{
 		if(err){
 			res.json({message: err.message});
@@ -336,7 +335,7 @@ router.get('/category-box/emergency', (req, res)=>{
 	});
 });
 
-router.get('/category-box/church', (req, res)=>{
+router.get('/category-box/church', checkAuthenticated, (req, res)=>{
 	Camp.find({ "category": "Church" }).exec((err, camps)=>{
 		if(err){
 			res.json({message: err.message});
@@ -349,7 +348,7 @@ router.get('/category-box/church', (req, res)=>{
 	});
 });
 
-router.get('/category-box/shelter', (req, res)=>{
+router.get('/category-box/shelter', checkAuthenticated, (req, res)=>{
 	Camp.find({ "category": "Shelter" }).exec((err, camps)=>{
 		if(err){
 			res.json({message: err.message});
@@ -362,7 +361,7 @@ router.get('/category-box/shelter', (req, res)=>{
 	});
 });
 
-router.get('/see-progress/:id', (req, res)=>{
+router.get('/see-progress/:id', checkAuthenticated, (req, res)=>{
 	let id = req.params.id;
 	Camp.findById(id, (err, camp)=>{
 		if(err){
