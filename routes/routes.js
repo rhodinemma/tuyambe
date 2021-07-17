@@ -362,4 +362,22 @@ router.get('/category-box/shelter', (req, res)=>{
 	});
 });
 
+router.get('/see-progress/:id', (req, res)=>{
+	let id = req.params.id;
+	Camp.findById(id, (err, camp)=>{
+		if(err){
+			res.redirect('/category-box');
+		}else{
+			if(camp == null){
+				res.redirect('/category-box');
+			}else{
+				res.render('see-progress',{
+					title:'Progress',
+					camp: camp,
+				});
+			}
+		}
+	});
+});
+
 module.exports = router;
