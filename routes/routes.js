@@ -159,7 +159,7 @@ router.get('/', (req, res)=>{
 });
 
 router.get('/home-page', checkAuthenticated, (req, res)=>{
-	Camp.find({ "category": "Education" }).limit(3).exec((err, camps)=>{
+	Camp.find().limit(3).exec((err, camps)=>{
 		if(err){
 			res.json({message: err.message});
 		}else{
