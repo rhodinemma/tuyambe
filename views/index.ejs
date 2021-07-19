@@ -38,13 +38,7 @@
                       <h2 class="text-center" style="font-size: 19px; letter-spacing: 2px;">We claim no sign-up fees or ongoing fees and we are unique from some other fundraising platforms by removing the 'middle man' aspect. Instead, funds donated through Tuyambe are sent directly to the charity itself.</h2><br />
                       <h2 class="text-center" style="font-size: 19px; letter-spacing: 2px;">We are a fundraising platform that exclusively focuses on smaller charities, with a focus on social giving.</h2>
                     </div><br />
-                    <div class="row">
-                      <div class="col-lg-12">
-                        <center>
-                          <a class="btn btn-success btn-lg btn-block" href="/why-donate-with-us" style="text-decoration: none; color:white; font-size: 24px;"><i class="fa fa-thumbs-up" aria-hidden="true"></i> Why Donate With Us?</a>
-                        </center>
-                      </div>
-                    </div>
+              
 
                   </div>
                 </div>
@@ -69,10 +63,13 @@
                         <div class="card h-100 shadow card-img-top" style="width: 18rem;">
                             <div class="card-body">
                               <img src="<%= row.image %>" class="img-fluid rounded" width="286px" height="180px"><br /><br />
-                              <h5><b>Title: </b></h5> <%= row.title %><br />
-                              <h5><b>Location:</b></h5> <%= row.location %><br />
-                              <h5><b>Category:</b></h5> <%= row.category %><br />
-                              <h5><b>Amount needed:</b></h5> <%= row.amount %>
+                              <h5 class="display-5" style="text-transform: uppercase; text-align: left;"><b><%= row.title %></b></h5><br />
+                              <h5 style="background-color: gold; color: black; border-radius: 5px; width: 50%; text-align: center; font-size: 15px;"><b><%= row.category %></b></h5><br />
+                              <h5 style="text-transform: lowercase; text-align: left;"><%= row.story%></h5><br />
+                              <h5 class="display-6" style="text-align: left"> <b>UGX <%= row.amount %></b></h5>
+                              <div class="progress" style="height: 30px;">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%; font-size: 16px;">75%</div>
+                              </div>
                             </div>
                             <div class="card-footer">
                               <a class="btn btn-warning btn-lg btn-block" href="/see-progress/<%=row._id %>" role="button"><i class="far fa-eye"></i> See progress</a>
@@ -95,12 +92,12 @@
     <div class="container shadow-lg p-3 mb-5 rounded">
       <div class="row">
         <div class="col-lg-6 mt-3 text-center" style="letter-spacing: 2px;">
-          <h1 style="font-size: 26px; text-align: left;" class="display-6"><b>Tuyambe Checklist</b></h1>
+          <h1 style="font-size: 22px; text-align: left;" class="display-6"><b>Service Checklist</b></h1>
 
-          <h4 style="text-align: left;"><i class="fas fa-check-square"></i> Fundraise for anything, causes, people and more</h4><br />
-          <h4 style="text-align: left;"><i class="fas fa-check-square"></i> Accept donations instantly</h4><br />
-          <h4 style="text-align: left;"><i class="fas fa-check-square"></i> Mobile friendly</h4><br />
-          <h4 style="text-align: left;"><i class="fas fa-check-square"></i> Safe and Secure</h4><br />
+          <h5 style="text-align: left;"><i class="fas fa-check-square"></i> Fundraise for anything, causes, people and more</h5><br />
+          <h5 style="text-align: left;"><i class="fas fa-check-square"></i> Accept donations instantly</h5><br />
+          <h5 style="text-align: left;"><i class="fas fa-check-square"></i> Mobile friendly</h5><br />
+          <h5 style="text-align: left;"><i class="fas fa-check-square"></i> Safe and Secure</h5><br />
         </div>
 
         <div class="col-lg-6">

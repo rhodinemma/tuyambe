@@ -193,8 +193,8 @@ router.get('/why-donate-with-us', checkAuthenticated, (req, res)=>{
 	res.render('news', {title: 'Blog'});
 });
 
-router.get('/how-it-works', checkAuthenticated, (req, res)=>{
-	res.render('how-it-works', {title: 'Steps'});
+router.get('/stories', (req, res)=>{
+	res.render('stories', {title: 'Stories'});
 });
 
 //route responsible for starting a campaign
@@ -361,7 +361,7 @@ router.get('/category-box/shelter', checkAuthenticated, (req, res)=>{
 	});
 });
 
-router.get('/see-progress/:id', checkAuthenticated, (req, res)=>{
+router.get('/see-progress/:id', (req, res)=>{
 	let id = req.params.id;
 	Camp.findById(id, (err, camp)=>{
 		if(err){
