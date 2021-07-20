@@ -99,11 +99,52 @@
               <li><i class="fa-li fa fa-spinner fa-spin"></i><b>Active</b></li>
             </ul>
 
-            <a class="btn btn-success btn-lg btn-block" href="#" role="button" style="font-size: 20px; letter-spacing: 2px;"><i class="fas fa-hand-holding-usd"></i> Donate Now</a>
+            <a class="btn btn-success btn-lg btn-block" href="#" role="button" style="font-size: 20px; letter-spacing: 2px;" data-toggle="modal" data-target="#MakeDonation"><i class="fas fa-hand-holding-usd"></i> Donate Now</a>
 
             <a class="btn btn-warning btn-lg btn-block" role="button" style="font-size: 20px; letter-spacing: 2px;" onclick="copyToClipboard()"><i class="fas fa-share-alt"></i> Copy and share link</a>
 				</div>
 			</div>
 	</div>
+
+            <!--MakeDonation modal start-->
+              <div class="modal fade" id="MakeDonation" tabindex="-1" role="dialog" aria-labelledby="MakeDonationTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h2 class="modal-title" id="MakeDonationTitle"><%= camp.title %></h2>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                      <h4><b>Choose Donation Method</b></h4>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                          <label class="form-check-label" for="flexRadioDefault1">
+                            Use Credit Card
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                          <label class="form-check-label" for="flexRadioDefault2">
+                            Use Mobile Money
+                          </label>
+                        </div><br /><br />
+
+                        <h4><b>Enter Amount Here</b></h4>
+                          <input type="text" name="amount" id="amount" class="form-control" placeholder="Your amount goes here">
+
+                          <br /> <br />
+
+                        <h4><b>Leave a message for your support</b></h4>
+                          <textarea class="form-control" name="story" rows="2" placeholder="Your message goes here" maxlength="50"></textarea>
+                    </div>
+                    <div class="modal-footer"> 
+                      <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <!--MakeDonation modal end-->
 
 <%- include('layout/footer') %>
