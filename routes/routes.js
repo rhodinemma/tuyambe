@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
@@ -50,7 +52,7 @@ const checkAuthenticated = function(req, res, next){
 }
 
 //creating database connection here
-mongoose.connect("mongodb+srv://rhodzeey:12345@cluster0.tpb0e.mongodb.net/auth?retryWrites=true&w=majority", {
+mongoose.connect(process.env.MONGODB_URI, {
 	useCreateIndex: true,
 	useNewUrlParser: true,
 	useUnifiedTopology: true,

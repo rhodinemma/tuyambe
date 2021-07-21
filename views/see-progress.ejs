@@ -69,34 +69,34 @@
 				</div>
 
 				<div class="col-lg-6">
-					<h5 style="letter-spacing: 2px;">Description</h5>
+					<h5 style="letter-spacing: 2px;"><b>Description</b></h5>
 						<p style="font-size: 18px;">
-							<b><%= camp.story %></b>
+							<%= camp.story %>
 						</p>
 
-					<h5 style="letter-spacing: 2px;">Amount needed</h5>
+					<h5 style="letter-spacing: 2px;"><b>Amount needed</b></h5>
 					  <p style="font-size: 22px;">
 						  <i class="fa fa-heartbeat" aria-hidden="true"></i> 
-						  <b><%= camp.amount %></b>
+						    <%= camp.amount %>
 					  </p>
 
-					<h5 style="letter-spacing: 2px;">Amount collected so far</h5>
+					<h5 style="letter-spacing: 2px;"><b>Amount collected so far</b></h5>
 						<p style="font-size: 22px;">
-							<i class="fa fa-hourglass-half" aria-hidden="true"></i>&nbsp;&nbsp;<b>900,000</b>
+							<i class="fa fa-hourglass-half" aria-hidden="true"></i>&nbsp;&nbsp;900,000
 
               <div class="progress" style="height: 50px;">
                   <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%; font-size: 20px;">75%</div>
               </div>
 						</p>
 
-					<h5 style="letter-spacing: 2px;">Number of donors</h5>
+					<h5 style="letter-spacing: 2px;"><b>Number of donors</b></h5>
 						<p style="font-size: 22px;">
-							<i class="fa fa-child fa-lg" aria-hidden="true"></i> &nbsp;&nbsp;<b>200</b>
+							<i class="fa fa-child fa-lg" aria-hidden="true"></i> &nbsp;&nbsp;200
 						</p>
 
-					<h5 style="letter-spacing: 2px;">Campaign Status: </h5>
+					<h5 style="letter-spacing: 2px;"><b>Campaign Status: </b></h5>
             <ul class="fa-ul">
-              <li><i class="fa-li fa fa-spinner fa-spin"></i><b>Active</b></li>
+              <li><i class="fa-li fa fa-spinner fa-spin"></i>Active</li>
             </ul>
 
             <a class="btn btn-success btn-lg btn-block" href="#" role="button" style="font-size: 20px; letter-spacing: 2px;" data-toggle="modal" data-target="#MakeDonation"><i class="fas fa-hand-holding-usd"></i> Donate Now</a>
@@ -117,20 +117,6 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                      <h4><b>Choose Donation Method</b></h4>
-                        <div class="form-check">
-                          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                          <label class="form-check-label" for="flexRadioDefault1">
-                            Use Credit Card
-                          </label>
-                        </div>
-                        <div class="form-check">
-                          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                          <label class="form-check-label" for="flexRadioDefault2">
-                            Use Mobile Money
-                          </label>
-                        </div><br /><br />
-
                         <h4><b>Enter Amount Here</b></h4>
                           <input type="text" name="amount" id="amount" class="form-control" placeholder="Your amount goes here">
 
@@ -138,6 +124,10 @@
 
                         <h4><b>Leave a message for your support</b></h4>
                           <textarea class="form-control" name="story" rows="2" placeholder="Your message goes here" maxlength="50"></textarea>
+
+                          <br /> <br />
+
+                        <a class="btn btn-success btn-lg btn-block text-center" role="button" href="/pay" style="font-size: 20px; letter-spacing: 2px; font-weight: lighter;"><i class="fas fa-arrow-circle-right"></i> Click here to continue</a>
                     </div>
                     <div class="modal-footer"> 
                       <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
