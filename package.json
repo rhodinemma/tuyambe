@@ -1,7 +1,7 @@
 {
-  "name": "node_authentications",
+  "name": "tuyambe",
   "version": "1.0.0",
-  "description": "Registration and Login capabilities",
+  "description": "An Ugandan Based Fundraising Platform",
   "main": "server.js",
   "scripts": {
     "dev": "nodemon server.js"
