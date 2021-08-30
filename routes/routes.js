@@ -191,14 +191,6 @@ router.get('/category-box', checkAuthenticated, (req, res)=>{
 	});
 });
 
-router.get('/why-donate-with-us', checkAuthenticated, (req, res)=>{
-	res.render('news', {title: 'Blog'});
-});
-
-router.get('/stories', (req, res)=>{
-	res.render('stories', {title: 'Stories'});
-});
-
 //route responsible for starting a campaign
 router.get('/create-campaign', checkAuthenticated, (req, res)=>{
 	res.render('create-campaign', {title: 'Create'});
