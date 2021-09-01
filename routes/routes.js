@@ -373,4 +373,22 @@ router.get('/see-progress/:id', (req, res)=>{
 	});
 });
 
+router.get('/see-progress/:id/donate', (req, res)=>{
+	let id = req.params.id;
+	Camp.findById(id, (err, camp)=>{
+		if(err){
+			res.redirect('/category-box');
+		}else{
+			if(camp == null){
+				res.redirect('/category-box');
+			}else{
+				res.render('make-donation',{
+					title:'Donate',
+					camp: camp,
+				});
+			}
+		}
+	});
+});
+
 module.exports = router;
